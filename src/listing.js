@@ -6,19 +6,19 @@
  */
 (function( window ) {
   alert("loading auto script");
-  var document = window.document,
       fieldValueMap = {
            "Address" : "testing Daily",
 	   "Unit": 3,
 	   "City": "city",
-	   "Region": "Candada"
+	   "Postal Code": "ZZZZ",
+	   "Region": "Banff"
       };
 
     Object.keys( fieldValueMap ).forEach(function( name ){
 
         var input =  document.querySelector( "form input[aria-label='"+ name+"']" );
 
-        input && input.type !== "hidden" && ( input.value = fieldValueMap[ name ] );
+        input && input.type !== "hidden" && ( input.value = fieldValueMap["'"+ name+ "'" ] );
     });
 
 })( window );
