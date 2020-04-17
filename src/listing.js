@@ -8,14 +8,18 @@
   "use strict";
   var document = window.document,
       fieldValueMap = {
-           "address" : "testing Daily"
+           "Address" : "testing Daily",
+	   "Unit": 3,
+	   "City": "city",
+	   "Postal Code": "TTTT",
+	   "Region": "Candada"
       };
 
     Object.keys( fieldValueMap ).forEach(function( name ){
 
-        var input = document.querySelector( "form input[name='" + name + "']" )
-						|| document.querySelector( "form select[name='" + name + "']" )
-            || document.querySelector( "form textarea[name='" + name + "']" );
+        var input =  document.querySelector( "form input[aria-label='"+ name+"']" )
+						|| document.querySelector( "form select[aria-label='"+ name+"']" )
+            || document.querySelector( "form textarea[aria-label='"+ name+"']");
 
         input && input.type !== "hidden" && ( input.value = fieldValueMap[ name ] );
     });
