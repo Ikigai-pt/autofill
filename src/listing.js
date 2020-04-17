@@ -5,7 +5,7 @@
  * @license MIT
  */
 (function( window ) {
-  "use strict";
+  console.log("loading auto script");
   var document = window.document,
       fieldValueMap = {
            "Address" : "testing Daily",
